@@ -23,14 +23,12 @@ main:
     mov $18, %rdx       # write 18 bytes
     syscall
 
-    #write the num
-    #mov $1, %rax        # 1 is system call id for write
-    #mov $1, %rdi        # 1 is fd for stdout
-    #mov $num, %rsi      # address of message
-
+    # exit(42)
+    mov     $60, %rax        # 60 is system call id for exit
+    mov     $33, %rdi        # 42 is the exit value
+    syscall
 
     .data
 message1: .ascii "Please enter a number: "
 message2: .ascii "You have entered: "
-newline: .ascii "\n"
 num: .zero 100
