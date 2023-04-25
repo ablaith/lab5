@@ -29,8 +29,8 @@ main:
     syscall
 
     add %r8, %r9        # add r8 to r9, store into r8
-    # mov %r8, %rsi   # move result in r8 into rsi
-    add %r8, $'0'   # convert result into printable char
+    mov %r8, $res   # move result in r8 into res
+    # add %r8, $'0'   # convert result into printable char
 
     #write "Result is: " message
     mov $1, %rax        # 1 is system call id for write
@@ -39,7 +39,7 @@ main:
     # mov $21, %rdx       # write 21 bytes
     syscall
 
-    mov %r8, %rsi   # move result into rsi
+    mov $res, %rsi   # move result into rsi
     syscall
 
     mov $newline, %rsi   # move newline into rsi    
