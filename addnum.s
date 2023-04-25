@@ -19,7 +19,7 @@ main:
     mov $1, %rax        # 1 is system call id for write
     mov $1, %rdi        # 1 is fd for stdout
     mov $message1, %rsi      # address of message
-    mov $21, %rdx       # write 21 bytes
+    mov $23, %rdx       # write 21 bytes
     syscall
 
     # take in num from command line
