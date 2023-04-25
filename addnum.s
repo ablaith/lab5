@@ -45,6 +45,11 @@ main:
     mov $newline, %rsi   # move newline into rsi    
     syscall
 
+    # exit(42)
+    mov     $60, %rax        # 60 is system call id for exit
+    mov     $33, %rdi        # 42 is the exit value
+    syscall
+
 .data
 res: .zero 100;
 message1: .ascii "Please enter a number: "
