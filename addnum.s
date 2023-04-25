@@ -30,7 +30,7 @@ main:
 
     add %r8, %r9        # add r8 to r9, store into r8
     # mov %r8, %rsi   # move result in r8 into rsi
-    # add %r8, '0'   # convert result into printable char
+    add %r8, $'0'   # convert result into printable char
 
     #write "Result is: " message
     mov $1, %rax        # 1 is system call id for write
