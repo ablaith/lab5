@@ -39,6 +39,7 @@ main:
     # mov $21, %rdx       # write 21 bytes
     syscall
 
+    mov $format, %rdi
     mov $r8, %rsi   # move result into rsi
     call printf
     syscall
@@ -52,6 +53,7 @@ main:
     syscall
 
 .data
+format: .ascii "%d "
 res: .zero 100;
 message1: .ascii "Please enter a number: "
 message2: .ascii "Result is: "
