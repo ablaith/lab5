@@ -40,6 +40,7 @@ main:
     syscall
 
     mov $res, %rsi   # move result into rsi
+    call printf
     syscall
 
     mov $newline, %rsi   # move newline into rsi    
