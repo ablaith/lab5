@@ -29,7 +29,7 @@ main:
     syscall
 
     add %r8, %r9        # add r8 to r9, store into r8
-    mov %r8, $res   # move result in r8 into res
+    # mov %r8, $res   # move result in r8 into res
     # add %r8, $'0'   # convert result into printable char
 
     #write "Result is: " message
@@ -39,7 +39,7 @@ main:
     # mov $21, %rdx       # write 21 bytes
     syscall
 
-    mov $res, %rsi   # move result into rsi
+    mov $r8, %rsi   # move result into rsi
     call printf
     syscall
 
