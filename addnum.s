@@ -41,6 +41,7 @@ main:
 
     mov $format, %rdi
     mov %r9, %rsi   # move result into rsi
+    mov $0, %al
     call printf
     syscall
 
