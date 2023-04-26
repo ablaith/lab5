@@ -33,11 +33,11 @@ main:
     # add %r8, $'0'   # convert result into printable char
 
     #write "Result is: " message
-    mov $1, %rax        # 1 is system call id for write
-    mov $1, %rdi        # 1 is fd for stdout
-    mov $message2, %rsi      # address of message
+    # mov $1, %rax        # 1 is system call id for write
+    # mov $1, %rdi        # 1 is fd for stdout
+    # mov $message2, %rsi      # address of message
     # mov $21, %rdx       # write 21 bytes
-    syscall
+    # syscall
 
     mov $format, %rdi
     mov %r9, %rsi   # move result into rsi
@@ -54,7 +54,7 @@ main:
     syscall
 
 .data
-format: .ascii "%d "
+format: .ascii "The value is %d \n"
 res: .zero 100;
 message1: .ascii "Please enter a number: "
 message2: .ascii "Result is: "
