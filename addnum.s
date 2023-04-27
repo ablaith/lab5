@@ -12,7 +12,7 @@ main:
     # take in num from command line
     mov $0, %rax    # 0 is system call id for read?
     mov $0, %rdi    # 0 is fd for stdin
-    mov %r8, %rsi  # load buffer address into rsi, store num 1 into r8
+    mov $num1, %rsi  # load buffer address into rsi, store num 1 into r8
     syscall
 
     #write "enter num" message
@@ -25,7 +25,7 @@ main:
     # take in num from command line
     mov $0, %rax    # 0 is system call id for read?
     mov $0, %rdi    # 0 is fd for stdin
-    mov %r9, %rsi  # load buffer address into rsi, store num 2 into r9
+    mov $num2, %rsi  # load buffer address into rsi, store num 2 into r9
     syscall
 
     add %r8, %r9        # add r8 to r9, store into r8
@@ -54,6 +54,8 @@ main:
     syscall
 
 .data
+num1: .zero 100
+num2: .zero 100
 format: .ascii "The value is %d \n"
 res: .zero 100;
 message1: .ascii "Please enter a number: "
